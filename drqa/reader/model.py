@@ -102,7 +102,7 @@ class DocReader(object):
 
         # When normalized, some words are duplicated. (Average the embeddings).
         vec_counts = {}
-        with open(embedding_file) as f:
+        with open(embedding_file, encoding='utf-8') as f:
             # Skip first line if of form count/dim.
             line = f.readline().rstrip().split(' ')
             if len(line) != 2:
