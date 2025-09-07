@@ -29,7 +29,7 @@ class CoreNLPTokenizer(Tokenizer):
         self.classpath = (kwargs.get('classpath') or
                           DEFAULTS['corenlp_classpath'])
         self.annotators = copy.deepcopy(kwargs.get('annotators', set()))
-        self.mem = kwargs.get('mem', '2g')
+        self.mem = kwargs.get('mem', '1g')
         self._launch()
 
     def _launch(self):
