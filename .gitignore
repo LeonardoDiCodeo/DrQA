@@ -1,7 +1,8 @@
 *.pyc
 *.DS_Store
 *~
-data/
+data/corenlp
+data/embeddings
 *.tar.gz
 *.egg-info
 scripts/reader/official_eval.py
