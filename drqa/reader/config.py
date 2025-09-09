@@ -39,7 +39,7 @@ def add_model_args(parser):
                        help='Model architecture type')
     model.add_argument('--embedding-dim', type=int, default=300,
                        help='Embedding size if embedding_file is not given')
-    model.add_argument('--hidden-size', type=int, default=128,
+    model.add_argument('--hidden-size', type=int, default=64,
                        help='Hidden size of RNN units')
     model.add_argument('--doc-layers', type=int, default=3,
                        help='Number of encoding layers for document')
@@ -71,7 +71,7 @@ def add_model_args(parser):
     optim = parser.add_argument_group('DrQA Reader Optimization')
     optim.add_argument('--dropout-emb', type=float, default=0.4,
                        help='Dropout rate for word embeddings')
-    optim.add_argument('--dropout-rnn', type=float, default=0.4,
+    optim.add_argument('--dropout-rnn', type=float, default=0.2,
                        help='Dropout rate for RNN states')
     optim.add_argument('--dropout-rnn-output', type='bool', default=True,
                        help='Whether to dropout the RNN output')
@@ -89,7 +89,7 @@ def add_model_args(parser):
                        help='Keep word embeddings fixed (use pretrained)')
     optim.add_argument('--tune-partial', type=int, default=0,
                        help='Backprop through only the top N question words')
-    optim.add_argument('--rnn-padding', type='bool', default=False,
+    optim.add_argument('--rnn-padding', type='bool', default=True,
                        help='Explicitly account for padding in RNN encoding')
     optim.add_argument('--max-len', type=int, default=15,
                        help='The max span allowed during decoding')
